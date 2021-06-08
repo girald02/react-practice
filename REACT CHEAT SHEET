@@ -1,0 +1,217 @@
+
+░█▀▀█ █▀▀ █▀▀█ █▀▀ ▀▀█▀▀ 　 ░█▀▀▀ ░█▀▀▀█ ▄▀▀▄ 
+░█▄▄▀ █▀▀ █▄▄█ █── ──█── 　 ░█▀▀▀ ─▀▀▀▄▄ █▄▄─ 
+░█─░█ ▀▀▀ ▀──▀ ▀▀▀ ──▀── 　 ░█▄▄▄ ░█▄▄▄█ ▀▄▄▀
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+ReactDOM.render(<Car/>, document.getElementById('root'));
+
+
+  <script>
+   class Car{
+    constructor(name){
+      this.brand = name;
+    }
+
+    present(){
+      return "I have car: <a href='#'>" + this.brand + "</a>";
+    }
+  }
+
+  class Model extends Car{
+    constructor(name,model){
+      super(name); //Para ma access yung parent class variables*
+      this.model = model;
+    }
+
+    show(){
+      return this.present() + " <br>And the model is:  <a href='#'>'" + this.model +"</a>";
+    }
+  }
+
+  myCar = new Model("Ford" , "Mustang");
+  document.write(myCar.show());
+
+</script>
+
+</body>
+</html>
+
+========================================
+            ARROW FUNCTIONS
+========================================
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <script>
+    myCar = () => {
+      return "Hello fcking world";
+    }
+
+   document.getElementById("demo").innerHTML = myCar();
+  </script>
+
+</body>
+</html>
+
+------------------------------------------
+//With Arrow Function:
+------------------------------------------
+hello = () => {
+  return "Hello World!";
+}
+
+------------------------------------------
+//Arrow Functions Return Value by Default:
+------------------------------------------
+hello = () => "Hello World!";
+
+------------------------------------------
+//Arrow Function With Parameters:
+------------------------------------------
+hello = (val) => "Hello " + val;
+<script>
+      hello = (val) => "Hello " + val;
+      document.write(hello('Girald'));
+</script>
+
+------------------------------------------
+//Arrow Function Without Parentheses:
+------------------------------------------
+hello = val => "Hello " + val;
+
+
+------------------------------------------
+             𝗪𝗵𝗮𝘁 𝗔𝗯𝗼𝘂𝘁 𝘁𝗵𝗶𝘀❓
+------------------------------------------
+The handling of this is also different in arrow functions compared to regular functions.
+
+In short, with arrow functions there are no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions, the this keyword always represents the object that defined the arrow function.
+
+
+------------------------------------------
+              𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲𝘀
+------------------------------------------
+Now, with ES6, there are three ways of defining your variables: var, let, and const.
+------------------------------------------
+var
+var x = 5.6;
+
+If you use var outside of a function, it belongs to the global scope.
+
+If you use var inside of a function, it belongs to that function.
+
+If you use var inside of a block, i.e. a for loop, the variable is still available outside of that block.
+
+var has a function scope, not a block scope.
+------------------------------------------
+------------------------------------------
+let
+let x = 5.6;
+
+let has a block scope.
+
+let is the block scoped version of var, and is limited to the block (or expression) where it is defined.
+
+If you use let inside of a block, i.e. a for loop, the variable is only available inside of that loop.
+------------------------------------------
+------------------------------------------
+const
+const x = 5.6;
+
+const is a variable that once it has been created, its value can never change.
+
+const has a block scope.
+------------------------------------------
+
+------------------------------------------
+          𝗥𝗲𝗮𝗰𝘁 𝗥𝗲𝗻𝗱𝗲𝗿 𝗛𝗧𝗠𝗟
+------------------------------------------
+ReactDOM.render(<p></p>, document.getElementById('root'));
+
+------------------------------------------
+              𝗪𝗵𝗮𝘁 𝗶𝘀 𝗝𝗦𝗫❓
+------------------------------------------
+JSX stands for JavaScript XML.
+JSX allows us to write HTML in React.
+JSX makes it easier to write and add HTML in React.
+
+------------------------------------------
+              𝗪𝗵𝗮𝘁 𝗶𝘀 𝗖𝗼𝗱𝗶𝗻𝗴 𝗝𝗦𝗫 ❓
+------------------------------------------
+
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+
+JSX converts HTML tags into react elements.
+
+You are not required to use JSX, but JSX makes it easier to write React applications.
+
+Example 1
+JSX:
+
+const myelement = <h1>I Love JSX!</h1>;
+
+ReactDOM.render(myelement, document.getElementById('root'));
+
+Example 2
+Without JSX:
+
+const myelement = React.createElement('h1', {}, 'I do not use JSX!');
+
+ReactDOM.render(myelement, document.getElementById('root'));
+
+------------------------------------------
+       𝗪𝗵𝗮𝘁 𝗶𝘀 Expressions in JSX❓
+------------------------------------------
+
+With JSX you can write expressions inside curly braces { }.
+
+The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result:
+
+Example
+Execute the expression 5 + 5:
+
+const myelement = <h1>React is {5 + 5} times better with JSX</h1>;
+------------------------------------------
+         𝗪𝗵𝗮𝘁 𝗶𝘀 React Components❓
+------------------------------------------
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML via a render() function.
+
+Components come in two types, Class components and Function components, in this tutorial we will concentrate on Class components.
+
+Create a Class Component
+When creating a React component, the component's name must start with an upper case letter.
+
+Example
+Create a Class component called Car
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+
+
+------------------------------------------
+              𝗪𝗵𝗮𝘁 𝗶𝘀 ❓
+------------------------------------------
+------------------------------------------
+              𝗪𝗵𝗮𝘁 𝗶𝘀 ❓
+------------------------------------------
